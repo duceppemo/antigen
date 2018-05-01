@@ -36,7 +36,7 @@ class ExtractAccessionFromGff(object):
         with open(self.output, 'w') as out:
             for cds in self.db.features_of_type('CDS'):
                 try:  # In case some entries don't have 'Name' attributes
-                    cds_name = cds['Name'][0]
+                    cds_name = cds['locus_tag'][0]
                 except KeyError:
                     cds_name = cds['ID'][0]
 
